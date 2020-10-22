@@ -62,7 +62,7 @@ input_df = user_input_features()
 st.subheader('User Input features')
 
 # Reads in saved saved models
-churn_model = joblib.load("models/best_clf.joblib")
+churn_model = joblib.load("models/churn_predictin.joblib")
 churn_reason_model = joblib.load("models/reason_prediction.joblib")
 scaler = joblib.load("models/scaler.joblib")
 
