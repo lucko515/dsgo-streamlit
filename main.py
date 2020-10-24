@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+import pickle
 import sklearn
 
 st.write("""
@@ -60,9 +60,15 @@ input_df = user_input_features()
 
 
 # Reads in saved saved models
-churn_model = joblib.load("models/churn_prediction.joblib")
-churn_reason_model = joblib.load("models/reason_prediction.joblib")
-scaler = joblib.load("models/scaler.joblib")
+
+with open("models/churn_prediction.pickle", "rb") as f:
+    churn_model = pickle.load(f)
+
+with open("models/churn_prediction.pickle", "rb") as f:
+    churn_reason_model = pickle.load(f)
+
+with open("models/scaler.pickle", "rb") as f:
+    scaler = pickle.load(f)
 
 scaled_inputs = scaler.transform(input_df.values)
 
