@@ -60,7 +60,7 @@ input_df = user_input_features()
 
 
 # Reads in saved saved models
-churn_model = joblib.load("models/churn_predictin.joblib")
+churn_model = joblib.load("models/churn_prediction.joblib")
 churn_reason_model = joblib.load("models/reason_prediction.joblib")
 scaler = joblib.load("models/scaler.joblib")
 
